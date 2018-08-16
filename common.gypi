@@ -157,6 +157,9 @@
           'BUILDING_V8_BASE_SHARED',
           'NODE_WITHOUT_NODE_OPTIONS',
         ],
+        'defines!': [
+          'DEBUG',
+        ],
         'conditions': [
           ['OS=="mac" and libchromiumcontent_component==0', {
             # -all_load is the "whole-archive" on macOS.

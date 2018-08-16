@@ -261,6 +261,8 @@ node::Environment* NodeBindings::CreateEnvironment(
       node::CreateIsolateData(context->GetIsolate(), uv_loop_, platform),
       context, args.size(), c_argv.get(), 0, nullptr);
 
+  env->async_hooks()->no_force_checks();
+
   if (browser_env_ == BROWSER) {
     // SetAutorunMicrotasks is no longer called in node::CreateEnvironment
     // so instead call it here to match expected node behavior
