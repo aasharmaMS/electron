@@ -547,8 +547,8 @@ describe('chromium feature', () => {
       }, (error) => done(error))
     })
 
-    after(() => {
-      protocol.unregisterProtocol(scheme)
+    after((done) => {
+      protocol.unregisterProtocol(scheme, () => done())
     })
 
     afterEach(() => {
@@ -595,8 +595,8 @@ describe('chromium feature', () => {
       }, (error) => done(error))
     })
 
-    after(() => {
-      protocol.unregisterProtocol(scheme)
+    after((done) => {
+      protocol.unregisterProtocol(scheme, () => done())
     })
 
     afterEach(() => {
